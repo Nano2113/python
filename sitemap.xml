@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://nano2113.github.io/python/">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://username.github.io/python-lessons/</loc>
+    <loc>https://nano2113.github.io/python/</loc>
     <priority>1.0</priority>
   </url>
+
 </urlset>
