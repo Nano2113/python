@@ -1,18 +1,18 @@
-# Python: 50 уроков (статический сайт)
+# DevLessons (Python + HTML/CSS/JS/C++)
 
-## Что внутри
-- `index.html` — сайт (поиск, фильтры, 50 тем)
-- `styles.css` — дизайн
-- `app.js` — логика поиска/фильтров/модалки
+## Файлы
+- index.html — страница
+- styles.css — дизайн
+- lessons.js — база уроков (все тексты/код/задания)
+- app.js — логика (поиск/фильтры/модалка)
+
+## Как добавить урок
+Открой `lessons.js`, скопируй любой объект и измени поля:
+- id (уникальный номер)
+- lang: "Python" | "HTML" | "CSS" | "JavaScript" | "C++"
+- level: "Beginner" | "Intermediate" | "Advanced"
+- title, tags, explanation, code, tasks
 
 ## Как выложить бесплатно на GitHub Pages
-1) Создай репозиторий на GitHub (например `python-lessons`)
-2) Загрузи эти 3 файла в корень репозитория
-3) Открой: Settings → Pages
-4) Source: Deploy from a branch
-5) Branch: `main` / folder: `/root`
-6) Сохрани — появится ссылка вида `https://USERNAME.github.io/python-lessons/`
-
-## Где вставлять рекламу
-В `index.html` есть блоки с текстом “Место для рекламы”.
-Туда можно вставить код рекламной сети (например AdSense) после одобрения.
+1) Зайди в репозиторий сайта и замени файлы на эти
+2) Settings → Pages → Deploy from branch → main /root
