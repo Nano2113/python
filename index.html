@@ -1,184 +1,90 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6282011650056149" crossorigin="anonymous"></script>
 
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <meta name="description" content="Уроки по программированию: Python, HTML, CSS, JavaScript, C++. Поиск, фильтры, примеры кода и задания."/>
-  <title>DevLessons — уроки программирования бесплатно</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">&lt;/&gt;</div>
-        <div class="brand__text">
-          <div class="brand__title">DevLessons</div>
-          <div class="brand__sub">Поиск • фильтры • примеры • задания</div>
-        </div>
-      </div>
-
-      <div class="actions">
-        <a class="btn btn--ghost" href="#lessons">Открыть уроки</a>
-        <a class="btn btn--primary" href="#how">Как добавить урок</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="hero" id="how">
-      <div class="hero__left">
-        <h1>Уроки по <span class="accent">Python</span>, <span class="accent">HTML</span>, <span class="accent">CSS</span>, <span class="accent">JavaScript</span> и <span class="accent">C++</span></h1>
-        <p class="lead">
-          Без регистрации. Открой урок → прочитай объяснение → скопируй код → сделай задания.
-          Используй поиск и фильтры по языку/уровню/тегам.
-        </p>
-
-        <div class="hero__cards">
-          <div class="card mini">
-            <div class="mini__title">🔎 Поиск</div>
-            <div class="mini__text">Ищи по словам: “циклы”, “flex”, “dom”, “vector”.</div>
-          </div>
-          <div class="card mini">
-            <div class="mini__title">🧭 Фильтры</div>
-            <div class="mini__text">Язык + уровень + теги — чтобы быстро находить.</div>
-          </div>
-          <div class="card mini">
-            <div class="mini__title">✅ Практика</div>
-            <div class="mini__text">В каждом уроке есть задания для закрепления.</div>
-          </div>
-        </div>
-
-
-      <aside class="hero__right">
-        <div class="card panel">
-          
-          
-          <div class="ad ad--mock" aria-label="Место под рекламу">
-            <div class="ad__tag">AD</div>
-            <div class="ad__title">></div>
-            <div class="ad__text"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6282011650056149"
-     crossorigin="anonymous"></script></div>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <section class="toolbox" id="lessons">
-      <div class="toolbox__head">
-        <h2>Уроки</h2>
-        <p class="muted">Фильтруй по языку и уровню, ищи по названию/тегам/тексту.</p>
-      </div>
-
-      <div class="filters">
-        <div class="searchbox">
-          <input id="q" type="search" placeholder="Поиск: list, json, flex, dom, vector..." autocomplete="off"/>
-          <button id="clear" class="btn btn--ghost" type="button">Очистить</button>
-        </div>
-
-        <div class="bar">
-          <select id="langSelect">
-            <option value="all">Все языки</option>
-          </select>
-
-          <div class="chips">
-            <button class="chip chip--active" data-level="all" type="button">Все уровни</button>
-            <button class="chip" data-level="Beginner" type="button">Beginner</button>
-            <button class="chip" data-level="Intermediate" type="button">Intermediate</button>
-            <button class="chip" data-level="Advanced" type="button">Advanced</button>
-          </div>
-
-          <select id="tagSelect">
-            <option value="all">Все теги</option>
-          </select>
-
-          <div class="count" id="count"></div>
-        </div>
-      </div>
-
-      <div class="grid" id="grid"></div>
-    </section>
-
-    <section class="footer">
-      <div class="footer__left">
-        <div class="footer__title">Подсказка для SEO</div>
-        <ul class="footer__list">
-          <li>Лучше делать отдельную страницу на каждый урок — так Google индексирует быстрее</li>
-          <li>Можно сделать автогенерацию 60 страниц из базы lessons.js</li>
-        </ul>
-      </div>
-      <div class="footer__right">
-        <div class="ad ad--mock">
-          <div class="ad__tag">AD</div>
-          <div class="ad__title"> <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6282011650056149"
-     crossorigin="anonymous"></script></div>
-         
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <dialog id="modal" class="modal">
-    <form method="dialog" class="modal__inner">
-      <div class="modal__head">
-        <div>
-          <div class="kicker" id="mKicker"></div>
-          <h3 id="mTitle"></h3>
-          <div class="tagrow" id="mTags"></div>
-        </div>
-        <button class="iconbtn" aria-label="Закрыть" value="close">✕</button>
-      </div>
-
-      <div class="modal__body">
-        <div class="content">
-          <h4>Объяснение</h4>
-          <div id="mExplanation" class="rich"></div>
-
-          <h4>Пример кода</h4>
-          <div class="codebox">
-            <button class="btn btn--ghost btn--sm" id="copyBtn" type="button">Копировать</button>
-            <pre><code id="mCode"></code></pre>
-          </div>
-
-          <h4>Задания</h4>
-          <ul id="mTasks" class="tasks"></ul>
-
-          <div class="hr"></div>
-          <div class="ad ad--mock">
-            <div class="ad__tag">AD</div>
-            <div class="ad__title"></div>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6282011650056149"
+<!-- Google AdSense (ОДИН РАЗ В HEAD) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6282011650056149"
      crossorigin="anonymous"></script>
-          </div>
-        </div>
-      </div>
 
-      <div class="modal__foot">
-        <button class="btn btn--ghost" value="close">Закрыть</button>
-      </div>
-    </form>
-  </dialog>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Уроки по программированию: Python, HTML, CSS, JavaScript, C++. Поиск, фильтры, примеры кода и задания."/>
+<title>DevLessons — уроки программирования бесплатно</title>
 
-  <script src="lessons.js"></script>
-  <script src="app.js"></script>
-  <!-- Google Translate -->
+<link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container">
+    <h1>DevLessons — уроки программирования</h1>
+  </div>
+</header>
+
+<main class="container">
+
+<!-- 🔥 РЕКЛАМА ВВЕРХУ -->
+<div class="ad">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-6282011650056149"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<section id="lessons">
+  <h2>Уроки</h2>
+  <div id="grid"></div>
+</section>
+
+<!-- 🔥 РЕКЛАМА ВНИЗУ -->
+<div class="ad">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-6282011650056149"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+</main>
+
+<!-- МОДАЛКА УРОКА -->
+<dialog id="modal">
+  <div id="mExplanation"></div>
+  <pre><code id="mCode"></code></pre>
+
+  <!-- 🔥 РЕКЛАМА В УРОКЕ -->
+  <div class="ad">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6282011650056149"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+</dialog>
+
+<script src="lessons.js"></script>
+<script src="app.js"></script>
+
+<!-- 🌍 АВТО ПЕРЕВОД САЙТА -->
 <div id="google_translate_element" style="position:fixed; bottom:15px; right:15px; z-index:9999;"></div>
-
 <script>
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'ru',
-    includedLanguages: 'ru,en,uz',
-    layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+    includedLanguages: 'ru,en,uz'
   }, 'google_translate_element');
 }
 </script>
-
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
